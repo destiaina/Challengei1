@@ -50,7 +50,6 @@
         android:background="@color/colorPrimary"
         android:onClick="handleValid"
         android:text="Validation"
-        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"

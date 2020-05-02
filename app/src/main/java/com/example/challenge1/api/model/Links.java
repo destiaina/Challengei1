@@ -1,27 +1,47 @@
 package com.example.challenge1.api.model;
 
-import com.example.challenge1.api.helper.ServiceGenerator;
-import com.google.android.gms.common.api.Response;
-
-import java.io.IOException;
-import java.lang.annotation.Annotation;
-
-import okhttp3.ResponseBody;
-
 public class Links {
-    public static ApiError parseError(Response<?> response) {
-        Converter<ResponseBody, ApiError> converter =
-                ServiceGenerator.retrofit()
-                        .responseBodyConverter(ApiError.class, new Annotation[0]);
+    public String first,last,prev,next;
 
-        ApiError error;
+    public Links(String first, String last, String prev, String next) {
+        this.first = first;
+        this.last = last;
+        this.prev = prev;
+        this.next = next;
+    }
 
-        try {
-            error = converter.convert(response.errorBody());
-        } catch (IOException e) {
-            return new ApiError();
-        }
+    public Links() {
+    }
 
-        return error;
+    public String getFirst() {
+        return first;
+    }
+
+    public void setFirst(String first) {
+        this.first = first;
+    }
+
+    public String getLast() {
+        return last;
+    }
+
+    public void setLast(String last) {
+        this.last = last;
+    }
+
+    public String getPrev() {
+        return prev;
+    }
+
+    public void setPrev(String prev) {
+        this.prev = prev;
+    }
+
+    public String getNext() {
+        return next;
+    }
+
+    public void setNext(String next) {
+        this.next = next;
     }
 }
